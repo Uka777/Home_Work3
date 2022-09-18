@@ -1,7 +1,9 @@
 package com.demoqa;
+import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.open;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+
 
 
 public class PracticeTest {
@@ -9,4 +11,9 @@ public class PracticeTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.holdBrowserOpen = true;
     }
+    @Test void fillPracticeTest() {
+        open("/automation-practice-form");
+    }
+
+
 }
