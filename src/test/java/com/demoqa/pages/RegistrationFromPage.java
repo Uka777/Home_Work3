@@ -39,44 +39,44 @@ public class RegistrationFromPage {
         executeJavaScript("$('#fixedban').remove()");
         return this;
     }
-    public RegistrationFromPage SetFirstName(String Value) {
+    public RegistrationFromPage setFirstName(String Value) {
         firstNameInput.setValue(Value);
         return this;
     }
-    public RegistrationFromPage ClearFirstName() {
+    public RegistrationFromPage clearFirstName() {
         firstNameInput.clear();
         return this;
     }
-    public RegistrationFromPage SetLastName(String Value) {
+    public RegistrationFromPage setLastName(String Value) {
         lastNameInput.setValue(Value);
         return this;
     }
-    public RegistrationFromPage SetEmail(String Value) {
+    public RegistrationFromPage setEmail(String Value) {
         emailInput.setValue(Value);
         return this;
     }
-    public RegistrationFromPage SetGender(String Value) {
+    public RegistrationFromPage setGender(String Value) {
         genderInput.$(byText(Value)).click();
         return this;
     }
-    public RegistrationFromPage SetNumber(String Value) {
+    public RegistrationFromPage setNumber(String Value) {
         numberInput.setValue(Value);
         return this;
     }
-    public RegistrationFromPage SetBirthDay(String day, String month, String year) {
+    public RegistrationFromPage setBirthDay(String day, String month, String year) {
         $("#dateOfBirthInput").click();
         calendarComponent.SetDate(day, month, year);
         return this;
     }
-    public RegistrationFromPage SetSubjects(String Value) {
+    public RegistrationFromPage setSubjects(String Value) {
         subjectsInput.setValue(Value).pressEnter();
         return this;
     }
-    public RegistrationFromPage SetHobbies(String Value) {
+    public RegistrationFromPage setHobbies(String Value) {
         hobbiesInput.$(byText(Value)).click();
         return this;
     }
-    public RegistrationFromPage UploadPicture(String Value) {
+    public RegistrationFromPage uploadPicture(String Value) {
         pictureUpload.uploadFile(new File(Value));
         return this;
     }
