@@ -6,8 +6,6 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-
-
 public class RegistrationFormWithFaker {
     Faker faker = new Faker();
     public String firstName = faker.name().firstName();
@@ -17,7 +15,6 @@ public class RegistrationFormWithFaker {
     String streetAddress = faker.address().streetAddress();
     String day = String.valueOf(faker.number().numberBetween(1,28));
     String year = String.valueOf(faker.number().numberBetween(1990,2007));
-
     RegistrationFromPage registrationFromPage = new RegistrationFromPage();
 
     @BeforeAll
@@ -47,7 +44,15 @@ public class RegistrationFormWithFaker {
                 .setCity("Delhi")
                 .setSubmit()
                 .checkResultsTableVisible()
-                .checkResult("Student Name",firstName);
+                .checkResult("Student Name",firstName + " " + lastName)
+                .checkResult("Student Email", email)
+                .checkResult("Gender", "Female")
+                .checkResult("Mobile", number)
+                .checkResult("Subjects", "English")
+                .checkResult("Hobbies", "Music")
+                .checkResult("Picture", "bez-nazvanija.jpeg")
+                .checkResult("Address", streetAddress)
+                .checkResult("State and City", "NCR Delhi");
     }
     @Test
     void fillFormMinimumTest() {
@@ -56,7 +61,6 @@ public class RegistrationFormWithFaker {
                 .setLastName(lastName)
                 .setGender("Female")
                 .setNumber(number)
-                .setBirthDay("04","March", "1997")
                 .setSubmit()
                 .checkResultsTableVisible()
                 .checkResult("Student Name",firstName + " " + lastName);
