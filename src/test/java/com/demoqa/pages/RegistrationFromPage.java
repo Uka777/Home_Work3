@@ -97,7 +97,7 @@ public class RegistrationFromPage {
         return this;
     }
     public RegistrationFromPage setCity(String Value) {
-        cityInput.$(Value).click();
+        cityInput.$(byText(Value)).click();
         return this;
     }
     public RegistrationFromPage setSubmit() {
